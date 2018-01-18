@@ -66,6 +66,19 @@ export class SchemaBase implements ISchemaBase {
   }
 }
 
+// STEPS ===========================================================
+// Steps are has this order
+// PRE SETUP STEPS
+// SETUP STEP
+// VALIDATION STEPS
+
+// Here is insert position's definitions (ValidatorInsertType enum)
+// PRE_SETUP: before setup step. last one will run first
+// SETUP: setup step. only one setup step is supported now
+// HEAD: after setup step. last one will run first
+// TAIL: after all steps. last one will run last
+// =================================================================
+
 export class Schema implements ISchema {
   bases: Map<string, SchemaBase>
   steps: Array<Step>
